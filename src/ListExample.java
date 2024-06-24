@@ -80,6 +80,31 @@ public class ListExample {
     }
 
     // aufgabe 6 
+    public class ListToArrayConverter {
 
+        // Methode, die eine ArrayList in ein Array umwandelt
+        public static <T> T[] convertListToArray(List<T> list, T[] array) {
+            return list.toArray(array);
+        }
+    
+        public static void main(String[] args) {
+            // Beispiel-ArrayList
+            List<String> fruits = new ArrayList<>();
+            fruits.add("Apple");
+            fruits.add("Banana");
+            fruits.add("Cherry");
+    
+            // Konvertierung in ein Array
+            String[] fruitArray = convertListToArray(fruits, new String[0]);
+    
+            // Ausgabe des Arrays
+            for (String fruit : fruitArray) {
+                System.out.println(fruit);
+            }
+            // Erklärung
+            
+            // Die Methode convertListToArray verwendet die toArray-Methode von ArrayList, um eine ArrayList in ein Array zu konvertieren. Das Array wird als Parameter übergeben, um den Typ anzugeben.
+        }
+    }
 
 }
