@@ -1,19 +1,27 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 
 // Aufagbe 1 
 
-public class ListExample {
+public class ListExample2 {
+
     public static void main(String[] args) {
-        // Initialisierung einer ArrayList
-        List<String> listOne = new ArrayList<>();
-    
+        // ArrayList von Strings erstellen
+        List<String> fruits = new ArrayList<>();
 
+        // Werte zur ArrayList hinzufügen
+        fruits.add("Apfel");
+        fruits.add("Banane");
+        fruits.add("Orange");
 
-        // Initialisierung mit Werten
-        List<String> Fruitlist = new ArrayList<>(List.of("Apple", "Banana", "Orange"));
+        // ArrayList ausdrucken
+        System.out.println("Inhalt der ArrayList: " + fruits);
     }
+}
 
 
 // aufgabe 2 
@@ -104,6 +112,61 @@ public class ListExample {
             // Erklärung
             
             // Die Methode convertListToArray verwendet die toArray-Methode von ArrayList, um eine ArrayList in ein Array zu konvertieren. Das Array wird als Parameter übergeben, um den Typ anzugeben.
+        }
+    }
+
+    // aufgabe 7
+    public class ListSorter {
+
+        // Methode, die eine ArrayList von Strings in aufsteigender Reihenfolge sortiert
+        public static void sortList(List<String> list) {
+            Collections.sort(list);
+        }
+    
+        public static void main(String[] args) {
+            // Beispiel-ArrayList
+            List<String> fruits = new ArrayList<>();
+            fruits.add("Banana");
+            fruits.add("Apple");
+            fruits.add("Cherry");
+    
+            // Sortierung der Liste
+            sortList(fruits);
+    
+            // Ausgabe der sortierten Liste
+            for (String fruit : fruits) {
+                System.out.println(fruit);
+            }
+            // info and explaining
+            // Die Methode sortList verwendet Collections.sort, um die ArrayList in aufsteigender Reihenfolge zu sortieren.
+        }
+    }
+
+
+    public class DuplicateRemover {
+
+        // Methode, die doppelte Elemente aus einer ArrayList entfernt
+        public static <T> List<T> removeDuplicates(List<T> list) {
+            Set<T> set = new LinkedHashSet<>(list);
+            return new ArrayList<>(set);
+        }
+    
+        public static void main(String[] args) {
+            // Beispiel-ArrayList mit doppelten Elementen
+            List<String> fruits = new ArrayList<>();
+            fruits.add("Apple");
+            fruits.add("Banana");
+            fruits.add("Apple");
+            fruits.add("Cherry");
+            fruits.add("Banana");
+    
+            // Entfernen der doppelten Elemente
+            List<String> uniqueFruits = removeDuplicates(fruits);
+    
+            // Ausgabe der Liste ohne doppelte Elemente
+            for (String fruit : uniqueFruits) {
+                System.out.println(fruit);
+            }
         }
     }
 
